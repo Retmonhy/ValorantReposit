@@ -1,0 +1,80 @@
+html, body{ margin: 0; padding: 0;}
+html{ font-size: 10px; }
+@mixin montserrat($fontSize, $fontWeight, $fontColor){
+	font-family: 'Montserrat', sans-serif;
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+	color: $fontColor;
+}
+@mixin drukWide($fontSize, $fontWeight, $fontColor){
+	font-family: 'Druk Wide', sans-serif;
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+	color: $fontColor;
+}
+@mixin posAbs($topOffset,  $rightOffset,  $offsetX, $offsetY){
+	position: absolute;
+	top: $topOffset; right: $rightOffset;
+	// bottom: $bottomOffset; right: $rightOffset;
+	transform: translate($offsetX, $offsetY);		//nen можно поставить условие if() которое будет проверять значение переменной и если оно равно чему-то определнному тоубирать определенное свойство
+}
+
+.mainContainer{
+	padding: 0 73px 0 73px ;
+
+}
+
+
+
+header{
+	position: relative;
+	height: 12rem;
+	border-top-left-radius: 3rem; 
+	border-top-right-radius: 3rem; 
+	background-color: #1F2326;
+	
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+	img{ margin-right: 6rem;}
+	.header__link{ 
+		@include montserrat(1.4rem, 700, #fff);
+		display: inline-block;
+		text-transform: uppercase;
+		margin-right: 5rem;
+	}
+	.header__link_arrow{
+		&:after{
+			content: '';
+			display: inline-block;
+			width: 1.5rem; height: 1.5rem;
+			margin-left: 1rem;
+			background: transparent url(../img/header/arrow.svg) 100% 75% no-repeat;
+		}
+	}	
+	.userBlock{
+		@include posAbs(50%, 73px, 0, -50%);
+
+		.userBlock__avatar{
+			display: inline-block;
+			width: 4.2rem; height: 4.2rem;
+			img{
+				margin-right: 1.6rem; 
+				border: none;
+				border-radius: 50%; 
+			}
+			
+
+		}	
+		.userBlock__nickname{
+			display: inline-block;
+			margin-right: 0rem;
+
+		}
+	}
+
+
+}
+
+
