@@ -7,7 +7,7 @@ html{ font-size: 10px; }
 	color: $fontColor;
 }
 @mixin drukWide($fontSize, $fontWeight, $fontColor){
-	font-family: 'Druk Wide', sans-serif;
+	font-family: "Druk Wide Bold", sans-serif;
 	font-size: $fontSize;
 	font-weight: $fontWeight;
 	color: $fontColor;
@@ -15,11 +15,10 @@ html{ font-size: 10px; }
 @mixin posAbs($topOffset,  $rightOffset,  $offsetX, $offsetY){
 	position: absolute;
 	top: $topOffset; right: $rightOffset;
-	// bottom: $bottomOffset; right: $rightOffset;
 	transform: translate($offsetX, $offsetY);		//nen можно поставить условие if() которое будет проверять значение переменной и если оно равно чему-то определнному тоубирать определенное свойство
 }
 
-.mainContainer{
+.headerContainer{
 	padding: 0 73px 0 73px ;
 
 }
@@ -73,7 +72,75 @@ header{
 
 		}
 	}
+}
 
+
+
+.mainSection{
+	position: relative;
+	.mainSection__background{ position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+	padding: 0 35px 0 35px;
+	background-color: #FF4656 ;
+	.main__header{ @include drukWide(15.6rem, 800, transparent);
+		transform: rotate(90deg);
+		-webkit-text-stroke: 2px #fff;
+		opacity: 1;
+		letter-spacing: 10%;
+	}
+	
+	
+	.agent-block{
+		position: relative;
+		display: inline-block;
+		width: 44rem; height: 99rem; 
+		margin-right: 14.4rem;
+		background: #1F2326;
+		.agent__info{
+			position: absolute;
+			top: 25%; left: 0; transform: translate(-48%, 0) rotate(90deg);
+			z-index: 5;
+			text-align: left;
+			width: 55rem;
+			p{ @include drukWide(2.4rem, 800, #FF4656);  margin-bottom: 0; letter-spacing: 0.3rem}
+			h2{
+				@include drukWide(7.2rem, 800, transparent);
+				margin-top: 0;
+				-webkit-text-stroke: 2px #fff;
+				opacity: 1;
+				line-height: 9.4rem;
+				letter-spacing: 0.5rem	;
+				text-transform: uppercase;
+			}
+		}
+		.agent__info_white{ h2{ -webkit-text-stroke: 2px #1F2326 ; }}
+
+
+		.agent__picture{
+			position: relative;
+			z-index: 2;
+			width: 100%; height: 100%;
+			img{ display: block; object-fit: fill;}
+
+			.agent__skills{
+				position: absolute;
+				bottom: 0; left: 0;
+				transform: translate(3.1rem, 3.5rem);
+				padding:  5.5rem 0 5.5rem 0;
+
+				text-align: center;
+				width: 100%; height: 11rem;
+				background-color: #1F2326;
+				border: 3px solid #F8F8F8;
+
+				.abilities{ display: inline-block;  line-height: 11rem; transform: translate(0, -50%)}
+			}
+			.agent__skills_white{ background-color: #fff; border: 3px solid #1F2326;}
+
+		}
+	}
+
+	.agent-block_white{ background: #fff;}
+	
 
 }
 

@@ -5,7 +5,7 @@ html, body {
 html {
   font-size: 10px; }
 
-.mainContainer {
+.headerContainer {
   padding: 0 73px 0 73px; }
 
 header {
@@ -57,3 +57,91 @@ header {
     header .userBlock .userBlock__nickname {
       display: inline-block;
       margin-right: 0rem; }
+
+.mainSection {
+  position: relative;
+  padding: 0 35px 0 35px;
+  background-color: #FF4656; }
+  .mainSection .mainSection__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .mainSection .main__header {
+    font-family: "Druk Wide Bold", sans-serif;
+    font-size: 15.6rem;
+    font-weight: 800;
+    color: transparent;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-text-stroke: 2px #fff;
+    opacity: 1;
+    letter-spacing: 10%; }
+  .mainSection .agent-block {
+    position: relative;
+    display: inline-block;
+    width: 44rem;
+    height: 99rem;
+    margin-right: 14.4rem;
+    background: #1F2326; }
+    .mainSection .agent-block .agent__info {
+      position: absolute;
+      top: 25%;
+      left: 0;
+      -webkit-transform: translate(-48%, 0) rotate(90deg);
+              transform: translate(-48%, 0) rotate(90deg);
+      z-index: 5;
+      text-align: left;
+      width: 55rem; }
+      .mainSection .agent-block .agent__info p {
+        font-family: "Druk Wide Bold", sans-serif;
+        font-size: 2.4rem;
+        font-weight: 800;
+        color: #FF4656;
+        margin-bottom: 0;
+        letter-spacing: 0.3rem; }
+      .mainSection .agent-block .agent__info h2 {
+        font-family: "Druk Wide Bold", sans-serif;
+        font-size: 7.2rem;
+        font-weight: 800;
+        color: transparent;
+        margin-top: 0;
+        -webkit-text-stroke: 2px #fff;
+        opacity: 1;
+        line-height: 9.4rem;
+        letter-spacing: 0.5rem;
+        text-transform: uppercase; }
+    .mainSection .agent-block .agent__info_white h2 {
+      -webkit-text-stroke: 2px #1F2326; }
+    .mainSection .agent-block .agent__picture {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%; }
+      .mainSection .agent-block .agent__picture img {
+        display: block;
+        -o-object-fit: fill;
+           object-fit: fill; }
+      .mainSection .agent-block .agent__picture .agent__skills {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        -webkit-transform: translate(3.1rem, 3.5rem);
+                transform: translate(3.1rem, 3.5rem);
+        padding: 5.5rem 0 5.5rem 0;
+        text-align: center;
+        width: 100%;
+        height: 11rem;
+        background-color: #1F2326;
+        border: 3px solid #F8F8F8; }
+        .mainSection .agent-block .agent__picture .agent__skills .abilities {
+          display: inline-block;
+          line-height: 11rem;
+          -webkit-transform: translate(0, -50%);
+                  transform: translate(0, -50%); }
+      .mainSection .agent-block .agent__picture .agent__skills_white {
+        background-color: #fff;
+        border: 3px solid #1F2326; }
+  .mainSection .agent-block_white {
+    background: #fff; }
