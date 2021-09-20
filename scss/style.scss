@@ -1,147 +1,457 @@
-html, body{ margin: 0; padding: 0;}
-html{ font-size: 10px; }
-@mixin montserrat($fontSize, $fontWeight, $fontColor){
-	font-family: 'Montserrat', sans-serif;
-	font-size: $fontSize;
-	font-weight: $fontWeight;
-	color: $fontColor;
+// body,
+// html
+// {
+//     margin: 0;
+//     padding: 0;
+// }
+// body
+// {
+//     display: inline-flex;
+//     align-items: center;
+//     justify-content: center;
+//     position: relative;
+
+//     width: 3000px;
+//     height: 2300px;
+
+//     background-color: darken(#292c31, 5%);
+// }
+.circle{ 
+    position: absolute;
+
+    z-index: -1;
+
+    border: none;
+
+    border-radius: 50%;
 }
-@mixin drukWide($fontSize, $fontWeight, $fontColor){
-	font-family: "Druk Wide Bold", sans-serif;
-	font-size: $fontSize;
-	font-weight: $fontWeight;
-	color: $fontColor;
-}
-@mixin posAbs($topOffset,  $rightOffset,  $offsetX, $offsetY){
-	position: absolute;
-	top: $topOffset; right: $rightOffset;
-	transform: translate($offsetX, $offsetY);		//nen можно поставить условие if() которое будет проверять значение переменной и если оно равно чему-то определнному тоубирать определенное свойство
-}
+.big-circle_red{
+    width: 2215px;
+    height: 2215px;
 
-.headerContainer{
-	padding: 0 73px 0 73px ;
+    transform: translate(-30%, -33%);
 
-}
-
-
-
-header{
-	position: relative;
-	height: 12rem;
-	border-top-left-radius: 3rem; 
-	border-top-right-radius: 3rem; 
-	background-color: #1F2326;
-	
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-
-	img{ margin-right: 6rem;}
-	.header__link{ 
-		@include montserrat(1.4rem, 700, #fff);
-		display: inline-block;
-		text-transform: uppercase;
-		margin-right: 5rem;
-	}
-	.header__link_arrow{
-		&:after{
-			content: '';
-			display: inline-block;
-			width: 1.5rem; height: 1.5rem;
-			margin-left: 1rem;
-			background: transparent url(../img/header/arrow.svg) 100% 75% no-repeat;
-		}
-	}	
-	.userBlock{
-		@include posAbs(50%, 73px, 0, -50%);
-
-		.userBlock__avatar{
-			display: inline-block;
-			width: 4.2rem; height: 4.2rem;
-			img{
-				margin-right: 1.6rem; 
-				border: none;
-				border-radius: 50%; 
-			}
-			
-
-		}	
-		.userBlock__nickname{
-			display: inline-block;
-			margin-right: 0rem;
-
-		}
-	}
+    background-color: #ff4656;
 }
 
-
-
-.mainSection{
-	position: relative;
-	.mainSection__background{ position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
-	padding: 0 35px 0 35px;
-	background-color: #FF4656 ;
-	.main__header{ @include drukWide(15.6rem, 800, transparent);
-		transform: rotate(90deg);
-		-webkit-text-stroke: 2px #fff;
-		opacity: 1;
-		letter-spacing: 10%;
-	}
-	
-	
-	.agent-block{
-		position: relative;
-		display: inline-block;
-		width: 44rem; height: 99rem; 
-		margin-right: 14.4rem;
-		background: #1F2326;
-		.agent__info{
-			position: absolute;
-			top: 25%; left: 0; transform: translate(-48%, 0) rotate(90deg);
-			z-index: 5;
-			text-align: left;
-			width: 55rem;
-			p{ @include drukWide(2.4rem, 800, #FF4656);  margin-bottom: 0; letter-spacing: 0.3rem}
-			h2{
-				@include drukWide(7.2rem, 800, transparent);
-				margin-top: 0;
-				-webkit-text-stroke: 2px #fff;
-				opacity: 1;
-				line-height: 9.4rem;
-				letter-spacing: 0.5rem	;
-				text-transform: uppercase;
-			}
-		}
-		.agent__info_white{ h2{ -webkit-text-stroke: 2px #1F2326 ; }}
-
-
-		.agent__picture{
-			position: relative;
-			z-index: 2;
-			width: 100%; height: 100%;
-			img{ display: block; object-fit: fill;}
-
-			.agent__skills{
-				position: absolute;
-				bottom: 0; left: 0;
-				transform: translate(3.1rem, 3.5rem);
-				padding:  5.5rem 0 5.5rem 0;
-
-				text-align: center;
-				width: 100%; height: 11rem;
-				background-color: #1F2326;
-				border: 3px solid #F8F8F8;
-
-				.abilities{ display: inline-block;  line-height: 11rem; transform: translate(0, -50%)}
-			}
-			.agent__skills_white{ background-color: #fff; border: 3px solid #1F2326;}
-
-		}
-	}
-
-	.agent-block_white{ background: #fff;}
-	
-
+.big-circle_gray{
+    width: 1450px; height: 1450px;
+    bottom: 0; right: 0;
+    transform: translate(25%, 33%);
+    background-color: #292c31;
+}
+.small-circle_white{
+    width: 270px; height: 270px;
+    top: 0; right: 0;
+    transform: translate(-104px, 182px);
+    background-color: #EFEFEF;
+}
+.medium-circle_while{
+    width: 470px; height: 470px;
+    bottom: 0; left: 0;
+    transform: translate( 177px , 55%);
+    background-color: #EFEFEF;
+}
+.tiny-circle_gray{
+    width: 100px; height: 100px;
+    top: 0; right: 0;
+    transform: translate(-55px, 475px);
+    background-color: #292c31;
+}
+.veryTiny-circle_gray{
+    width: 63px; height: 63px;
+    bottom: 0; left: 0;
+    transform: translate(112px, -178px);
+    background-color: #292c31;
+}
+.tiny-circle_red{
+    width: 44px; height: 44px; 
+    top: 0; right: 0;
+    transform: translate(-219px, 74px);
+    background-color: #ff4656;
 }
 
+.main-content{
+    // width: 2600px; 
+    height: 1763px;
+    background-color: #fff;
+    border-radius: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html,
+body
+{
+    margin: 0;
+    padding: 0;
+}
+html
+{
+    font-size: 10px;
+}
+@mixin montserrat($fontSize, $fontWeight, $fontColor)
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+
+    color: $fontColor;
+}
+@mixin drukWide($fontSize, $fontWeight, $fontColor)
+{
+    font-family: 'Druk Wide Bold', sans-serif;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+
+    color: $fontColor;
+}
+@mixin posAbs($topOffset,  $rightOffset,  $offsetX, $offsetY)
+{
+    position: absolute;
+    top: $topOffset;
+    right: $rightOffset;
+
+    transform: translate($offsetX, $offsetY);       //nen можно поставить условие if() которое будет проверять значение переменной и если оно равно чему-то определнному тоубирать определенное свойство
+}
+
+.headerContainer
+{
+    padding: 0 73px 0 73px ;
+}
+
+
+
+header
+{
+    position: relative;
+
+    display: flex;
+
+    height: 12rem;
+
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+    background-color: #1f2326;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    img
+    {
+        margin-right: 6rem;
+    }
+    .header__link
+    {
+        display: inline-block;
+
+        margin-right: 5rem;
+
+        text-transform: uppercase;
+
+        @include montserrat(1.4rem, 700, #fff);
+    }
+    .header__link_arrow
+    {
+        &:after
+        {
+            display: inline-block;
+
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-left: 1rem;
+
+            content: '';
+
+            background: transparent url(../img/header/arrow.svg) 100% 75% no-repeat;
+        }
+    }
+    .userBlock
+    {
+        @include posAbs(50%, 73px, 0, -50%);
+
+        .userBlock__avatar
+        {
+            display: inline-block;
+
+            width: 4.2rem;
+            height: 4.2rem;
+            img
+            {
+                margin-right: 1.6rem;
+
+                border: none;
+                border-radius: 50%;
+            }
+        }
+        .userBlock__nickname
+        {
+            display: inline-block;
+
+            margin-right: 0rem;
+        }
+    }
+}
+
+
+
+.mainSection
+{
+    position: relative;
+
+    padding: 0 35px 0 35px;
+
+    background-color: #ff4656 ;
+    .largeContainer
+    {
+        position: absolute;
+
+        background-color: transparent;
+    }
+    .mainSection__background
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+    .headerBlock
+    {
+        position: relative;
+
+        display: inline-block;
+
+        width: 30rem;
+        height: 105rem;
+        margin-top: 12rem;
+        margin-right: 11rem;
+        .logoSquere
+        {
+            position: relative;
+
+            display: inline-block;
+
+            width: 8rem;
+            height: 8rem;
+            margin-top: 90rem;
+
+            opacity: .7;
+            background: #1f2326 url(../img/header/logo.svg) 50% 50% no-repeat;
+            &:after
+            {
+                display: inline-block;
+
+                width: 100%;
+                height: 8px;
+
+                content: '';
+                transform: translate(0, 1000%);
+
+                opacity: .7;
+                background-color: #1f2326;
+            }
+        }
+        .main__header
+        {
+            line-height: 20rem;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            display: inline-block;
+
+            margin: 0;
+
+            transform: rotate(90deg) translate(0%, -150%);
+            transform-origin: 0 0;
+            letter-spacing: 1rem;
+            text-transform: uppercase;
+
+            opacity: 1;
+
+            @include drukWide(15.6rem, 800, transparent);
+            -webkit-text-stroke: 2px #fff;
+        }
+        .line_png
+        {
+            margin-top: 8rem;
+        }
+    }
+
+
+
+    .agent-block
+    {
+        position: relative;
+
+        display: inline-block;
+
+        width: 44rem;
+        height: 99rem;
+        margin-right: 14.4rem;
+
+        background: #1f2326;
+        .agent__info
+        {
+            position: absolute;
+            z-index: 5;
+            top: 25%;
+            left: 0;
+
+            width: 55rem;
+
+            transform: translate(-48%, 0) rotate(90deg);
+            text-align: left;
+            p
+            {
+                margin-bottom: 0;
+
+                letter-spacing: .3rem;
+
+                @include drukWide(2.4rem, 800, #ff4656);;
+            }
+            h2
+            {
+                line-height: 9.4rem;
+
+                margin-top: 0;
+
+                letter-spacing: .5rem   ;
+                text-transform: uppercase;
+
+                opacity: 1;
+
+                @include drukWide(7.2rem, 800, transparent);
+                -webkit-text-stroke: 2px #fff;
+            }
+        }
+        .agent__info_white
+        {
+            h2
+            {
+                -webkit-text-stroke: 2px #1f2326 ;
+            }
+        }
+
+
+        .agent__picture
+        {
+            position: relative;
+            z-index: 2;
+
+            width: 100%;
+            height: 100%;
+            img
+            {
+                display: block;
+
+                object-fit: fill;
+            }
+
+            .agent__skills
+            {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                width: 100%;
+                height: 11rem;
+                padding: 5.5rem 0 5.5rem 0;
+
+                transform: translate(3.1rem, 3.5rem);
+                text-align: center;
+
+                border: 3px solid #f8f8f8;
+                background-color: #1f2326;
+
+                .abilities
+                {
+                    line-height: 11rem;
+
+                    display: inline-block;
+
+                    transform: translate(0, -50%);
+                }
+            }
+            .agent__skills_white
+            {
+                border: 3px solid #1f2326;
+                background-color: #fff;
+            }
+        }
+    }
+
+    .agent-block_white
+    {
+        background: #fff;
+    }
+}
+
+.large-container{
+    // width: 2770px;
+}
+.skill-section{
+    width: 2656px;
+     position: absolute;
+    transform: translate(-130px, 0);
+    .skill__card{
+        position: relative;
+        border: 2px solid gray;
+        padding: 31px 60px;
+        width: 724px; height: 248px;
+        display: flex ;
+        align-items: center;
+        justify-content: space-around;    
+        margin-right: 80px;
+
+        &:before{/* отвечает за красны квадратик внутки */
+            content: '';
+            width: 190px; height: 182px;
+            background-color: #FF4656;
+            position: absolute;
+            bottom: 0; right: 118px; 
+            z-index: -1;
+        }
+        &:after{/* отвечает за отсеченный уголок */
+            content: '';
+            width: 5rem; height: 5rem;
+            background-color: #ccc;
+            border: solid 1px black;
+            border-left: 0;           
+            position: absolute;
+            z-index: -1;
+            top: -1px;
+            left: -2.5rem;
+            transform: skew(-45deg);
+        }
+        .skill__description{
+            width: 60%;
+            display: inline-block;
+            h3{  text-transform: uppercase;  @include drukWide(4rem, 800, #C4C4C4);}
+            strong{ @include drukWide(24px, 800, #000); display: inline-block; margin: 3rem 0;}
+            span{ display: inline-block; @include montserrat(16px, 400,#1F2326 );}
+        }
+        .skill__image{ display: inline-block;}
+    }
+.slick-prev{ display: none;}
+.slick-next{ width: 219px; height: 248px; background-color: #fff; margin-left: 20px; border: 2px solid red;}
+}
 

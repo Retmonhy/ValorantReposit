@@ -1,4 +1,5 @@
-let dia = 5;
-function editBlue(){
-
-};
+$('.skill-section').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1
+});
